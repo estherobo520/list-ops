@@ -4,20 +4,28 @@
 //
 
 export class List {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(list) {
+    this.values = list ? list : [];
   }
 
-  append() {
-    throw new Error("Remove this statement and implement this function");
+  append(appendList) {
+    this.values = [...this.values, ...appendList.values]
+    return this;
   }
 
-  concat() {
-    throw new Error("Remove this statement and implement this function");
+  concat(bigList) {
+    this.values = [...this.values + bigList.values];
+    return this;
   }
 
-  filter() {
-    throw new Error("Remove this statement and implement this function");
+  filter(callback) {
+    let array = [];
+    for (let a in this.value){
+      if(callback(a))
+      {
+        array.push(a);
+      }
+    }
   }
 
   map() {
