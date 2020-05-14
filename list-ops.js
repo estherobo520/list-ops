@@ -14,7 +14,7 @@ export class List {
   }
 
   concat(bigList) {
-    let list = new List();
+    const list = new List()
     for (let i = 0; i < bigList.values.length; i++)
     {
       list.values=[...list.values,...bigList.values[i].values]
