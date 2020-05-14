@@ -14,18 +14,24 @@ export class List {
   }
 
   concat(bigList) {
-    this.values = [...this.values + bigList.values];
+    let list = new List();
+    for (let i = 0; i < bigList.values.length; i++)
+    {
+      list.values=[...list.values,...bigList.values[i].values]
+    }
+    this.values = [...this.values + list.values];
     return this;
   }
 
   filter(callback) {
-    let array = [];
+    const array = new List();
     for (let a in this.value){
-      if(callback(a))
+      if(callback(this.values[a]))
       {
-        array.push(a);
+        array.values.push(this.values[a]);
       }
     }
+    return array;
   }
 
   map() {
